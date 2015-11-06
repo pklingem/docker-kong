@@ -3,7 +3,10 @@ MAINTAINER Marco Palladino, marco@mashape.com
 
 ENV KONG_VERSION 0.5.2
 
-RUN yum install -y https://github.com/Mashape/kong/releases/download/$KONG_VERSION/kong-$KONG_VERSION.el7.noarch.rpm && \
+RUN yum install -y wget
+RUN wget -O kong-0.5.2hotfixuri.el7.noarch.rpm https://www.dropbox.com/s/46t5g0dv70ikjhb/kong-0.5.2hotfixuri.el7.noarch.rpm?dl=1
+
+RUN yum install -y kong-0.5.2hotfixuri.el7.noarch.rpm && \
     yum clean all 
 
 VOLUME ["/etc/kong/"]
