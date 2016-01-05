@@ -10,6 +10,8 @@ VOLUME ["/etc/kong/"]
 
 COPY config.docker/kong.yml /etc/kong/kong.yml
 
-CMD kong start
+RUN kong start > /tmp/hello.log
+
+CMD tail -f /tmp/hello.log
 
 EXPOSE 8000 8001 7946
