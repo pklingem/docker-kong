@@ -1,7 +1,7 @@
 databases_available:
   cassandra:
     contact_points:
-      - "cassandra:9042"
+      - "ec2-52-6-21-95.compute-1.amazonaws.com:9042"
 nginx: |
   worker_processes auto;
   error_log logs/error.log error;
