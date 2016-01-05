@@ -10,6 +10,8 @@ VOLUME ["/etc/kong/"]
 
 COPY config.docker/kong.yml /etc/kong/kong.yml
 
+RUN touch /tmp/hello.log
+
 RUN kong start > /tmp/hello.log
 
 CMD tail -f /tmp/hello.log
