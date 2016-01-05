@@ -12,7 +12,7 @@ COPY config.docker/kong.yml /etc/kong/kong.yml
 
 RUN touch /tmp/hello.log
 
-RUN kong start > /tmp/hello.log
+RUN kong start
 
 CMD tail -f /tmp/hello.log
 
